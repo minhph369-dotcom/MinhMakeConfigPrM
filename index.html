@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Optimized MinhMakeConfig IOS</title> 
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+        }
+
+        .custom-shadow {
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .toggle {
+
+            position: relative;
+
+            display: inline-block;
+
+            width: 60px;
+
+            height: 34px;
+
+        }
+
+
+
+        .toggle input {
+
+            opacity: 0;
+
+            width: 0;
+
+            height: 0;
+
+        }
+
+
+
+        .slider {
+
+            position: absolute;
+
+            cursor: pointer;
+
+            top: 0;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 0;
+
+            background-color: #ccc;
+
+            transition: .4s;
+
+            border-radius: 34px;
+
+        }
+
+
+
+        .slider:before {
+
+            position: absolute;
+
+            content: "";
+
+            height: 26px;
+
+            width: 26px;
+
+            left: 4px;
+
+            bottom: 4px;
+
+            background-color: white;
+
+            transition: .4s;
+
+            border-radius: 50%;
+
+        }
+
+
+
+        input:checked + .slider {
+
+            background-color: #4CAF50;
+
+        }
+
+
+
+        input:checked + .slider:before {
+
+            transform: translateX(26px);
+
+        }
+
+    </style>
+
+</head>
+
+<body class="bg-gray-200 p-6">
+
+
+
+<h1 class="text-5xl font-extrabold text-black text-center mb-8">Optimze IOS</h1>
+
+
+
+<div class="input-container text-center mb-6">
+
+    <input type="text" id="keyInput" placeholder="Nhập khóa..." class="p-4 text-2xl border-2 border-green-500 rounded-lg w-80 focus:border-green-700 transition duration-300 ease-in-out" />
+
+    <button onclick="checkKey()" class="ml-2 p-4 text-2xl bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300 ease-in-out">Xác Nhận</button>
+
+</div>
+
+
+
+<div class="menu-container custom-shadow bg-white rounded-lg p-6 mb-6" id="menuContainer" style="display: none;">
+
+    <ul class="menu">
+
+        <li class="menu-item flex justify-between items-center mb-4">
+
+            <span class="text-xl font-semibold">Optimized Configuration</span>
+
+            <label class="toggle">
+
+                <input type="checkbox" onclick="toggle(this)">
+
+                <span class="slider"></span>
+
+            </label>
+
+        </li>
+
+        <li class="menu-item flex justify-between items-center mb-4">
+
+            <span class="text-xl font-semibold">Setup DPI Config</span>
+
+            <label class="toggle">
+
+                <input type="checkbox" onclick="toggle(this)">
+
+                <span class="slider"></span>
+
+            </label>
+
+        </li>
+
+        <li class="menu-item flex justify-between items-center mb-4">
+
+            <span class="text-xl font-semibold">Tối Ưu Hóa</span>
+
+            <label class="toggle">
+
+                <input type="checkbox" onclick="toggle(this)">
+
+                <span class="slider"></span>
+
+            </label>
+
+        </li>
+
+        <li class="menu-item flex justify-between items-center mb-4">
+
+            <span class="text-xl font-semibold">Gaming booster</span>
+
+            <label class="toggle">
+
+                <input type="checkbox" onclick="toggle(this)">
+
+                <span class="slider"></span>
+
+            </label>
+
+        </li>
+
+        <li class="menu-item flex justify-between items-center mb-4">
+
+            <span class="text-xl font-semibold">Gaming mode</span>
+
+            <label class="toggle">
+
+                <input type="checkbox" onclick="toggle(this)">
+
+                <span class="slider"></span>
+
+            </label>
+
+        </li>
+
+    </ul>
+
+</div>
+
+
+
+<div class="contact-info text-center text-lg text-black" id="contactInfo" style="display: none;">
+
+    Zalo MinhMakeConfigProMax : <strong>0333188886</strong> 
+
+</div>
+
+
+
+<div class="sliders-container max-w-xl mx-auto mt-6" id="slidersContainer" style="display: none;">
+
+    <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+
+        <h2 class="text-lg font-semibold mb-2">Tỉ Lệ Headshot</h2>
+
+        <div class="flex items-center">
+
+            <span class="text-gray-800 mr-2">0</span>
+
+            <input type="range" min="0" max="95" value="0" class="flex-1 h-2 bg-blue-500 rounded-lg appearance-none cursor-pointer" oninput="this.previousElementSibling.textContent = this.value">
+
+        </div>
+
+    </div>
+
+    <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+
+        <h2 class="text-lg font-semibold mb-2">Chống Rung Tâm</h2>
+
+        <div class="flex items-center">
+
+            <span class="text-gray-800 mr-2">0</span>
+
+            <input type="range" min="0" max="95" value="0" class="flex-1 h-2 bg-blue-500 rounded-lg appearance-none cursor-pointer" oninput="this.previousElementSibling.textContent = this.value">
+
+        </div>
+
+    </div>
+
+    <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+
+        <h2 class="text-lg font-semibold mb-2">Giảm Độ Giật</h2>
+
+        <div class="flex items-center">
+
+            <span class="text-gray-800 mr-2">0</span>
+
+            <input type="range" min="0" max="95" value="0" class="flex-1 h-2 bg-blue-500 rounded-lg appearance-none cursor-pointer" oninput="this.previousElementSibling.textContent = this.value">
+
+        </div>
+
+    </div>
+
+    <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+
+        <h2 class="text-lg font-semibold mb-2">Tối ưu FPS</h2>
+
+        <div class="flex items-center">
+
+            <span class="text-gray-800 mr-2">0</span>
+
+            <input type="range" min="0" max="95" value="0" class="flex-1 h-2 bg-blue-500 rounded-lg appearance-none cursor-pointer" oninput="this.previousElementSibling.textContent = this.value">
+
+        </div>
+
+    </div>
+
+    <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+
+        <h2 class="text-lg font-semibold mb-2">Mượt wifi</h2>
+
+        <div class="flex items-center">
+
+            <span class="text-gray-800 mr-2">0</span>
+
+            <input type="range" min="0" max="95" value="0" class="flex-1 h-2 bg-blue-500 rounded-lg appearance-none cursor-pointer" oninput="this.previousElementSibling.textContent = this.value">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+    function checkKey() {
+
+        const keyInput = document.getElementById('keyInput').value;
+
+        const menuContainer = document.getElementById('menuContainer');
+
+        const contactInfo = document.getElementById('contactInfo');
+
+        const inputContainer = document.getElementsByClassName('input-container')[0];
+
+        const slidersContainer = document.getElementById('slidersContainer');
+
+        
+
+        if (keyInput === '2602') { 
+
+            menuContainer.style.display = 'block';
+
+            contactInfo.style.display = 'block'; // Hiển thị thông tin liên hệ
+
+            inputContainer.style.display = 'none'; // Ẩn ô nhập mật khẩu
+
+            slidersContainer.style.display = 'block'; // Hiển thị sliders
+
+        } else {
+
+            alert('Khóa không đúng. Vui lòng thử lại.');
+
+        }
+
+    }
+
+
+
+    function toggle(checkbox) {
+
+        if (checkbox.checked) {
+
+            console.log("Bật");
+
+        } else {
+
+            console.log("Tắt");
+
+        }
+
+    }
+
+</script>
+
+
+
+</body>
+
+</html>
